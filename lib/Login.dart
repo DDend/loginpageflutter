@@ -1,21 +1,17 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../home_screen/home_screen_widget.dart';
-import '../register/register_widget.dart';
+import 'package:diskominfo/pages/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginWidget extends StatefulWidget {
-  const LoginWidget({Key key}) : super(key: key);
+  const LoginWidget({Key? key}) : super(key: key);
 
   @override
   _LoginWidgetState createState() => _LoginWidgetState();
 }
 
 class _LoginWidgetState extends State<LoginWidget> {
-  TextEditingController textController1;
-  TextEditingController textController2;
+  late TextEditingController textController1;
+  late TextEditingController textController2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -29,7 +25,7 @@ class _LoginWidgetState extends State<LoginWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -48,10 +44,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                     child: Text(
                       'Login',
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Poppins',
-                            fontSize: 32,
-                          ),
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 32,
+                      ),
                     ),
                   ),
                 ),
@@ -76,7 +72,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                           decoration: InputDecoration(
                             labelText: 'Email',
                             hintText: 'Masukkan Email',
-                            hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                            hintStyle: TextStyle(
+                              fontSize: 24,
+                            ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Colors.black,
@@ -94,7 +92,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                             filled: true,
                             fillColor: Colors.white,
                           ),
-                          style: FlutterFlowTheme.of(context).bodyText1,
+                          style: TextStyle(
+                            fontSize: 24,
+                          ),
                         ),
                       ),
                       Padding(
@@ -106,7 +106,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                           decoration: InputDecoration(
                             labelText: 'Password',
                             hintText: 'Masukkan Password',
-                            hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                            hintStyle: TextStyle(
+                              fontSize: 24,
+                            ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Colors.black,
@@ -124,47 +126,33 @@ class _LoginWidgetState extends State<LoginWidget> {
                             filled: true,
                             fillColor: Colors.white,
                           ),
-                          style: FlutterFlowTheme.of(context).bodyText1,
+                          style: TextStyle(
+                            fontSize: 24,
+                          ),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                         child: Text(
                           'Lupa Password?',
-                          style:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                  ),
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
-                        child: FFButtonWidget(
+                        child: ElevatedButton(
                           onPressed: () async {
                             await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => HomeScreenWidget(),
+                                builder: (context) => MyHomePage2(),
                               ),
                             );
                           },
-                          text: 'LOGIN',
-                          options: FFButtonOptions(
-                            width: 130,
-                            height: 40,
-                            color: Color(0xFF800080),
-                            textStyle:
-                                FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1,
-                            ),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
+                          child: Text("LOGIN"),
                         ),
                       ),
                       Padding(
@@ -174,17 +162,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                             await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => RegisterWidget(),
+                                builder: (context) => MyHomePage2(),
                               ),
                             );
                           },
                           child: Text(
                             'Belum memiliki Akun? Register disini',
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                    ),
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              color: Colors.black,
+                            ),
                           ),
                         ),
                       ),
